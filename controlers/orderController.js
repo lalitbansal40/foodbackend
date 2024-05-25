@@ -1,7 +1,7 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/uesrModel.js";
 import Stripe from "stripe";
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe("sk_test_51PJsNXSJLSHi65wnqzwM0fI9ppYAQZNrSqXlGBi0W30mDbgSM7tkBqQBHSnuEFx8iaWHM5lEJMd6oMtt4VICIRyS00cDVaWPii");
 
 //placing user order from frontend
 const placeOrder = async (req, res) => {
