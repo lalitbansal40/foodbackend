@@ -5,7 +5,7 @@ const stripe = new Stripe("sk_test_51PJsNXSJLSHi65wnqzwM0fI9ppYAQZNrSqXlGBi0W30m
 
 //placing user order from frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://jaipurfooddeliver.netlify.app";
+  const frontend_url = "https://jagatpurafooddelivery.netlify.app/";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
@@ -39,8 +39,8 @@ const placeOrder = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: line_items,
       mode: "payment",
-      success_url: `http://jaipurfooddeliver.netlify.app/verify?success=true&&orderId=${newOrder._id}`,
-      cancel_url: `http://jaipurfooddeliver.netlify.app/verify?success=false&&orderId=${newOrder._id}`,
+      success_url: `${frontend_url}/verify?success=true&&orderId=${newOrder._id}`,
+      cancel_url: `${frontend_url}/verify?success=false&&orderId=${newOrder._id}`,
     });
     res.json({ success: true, session_url: session.url });
   } catch (error) {
