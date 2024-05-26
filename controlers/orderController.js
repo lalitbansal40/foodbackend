@@ -5,7 +5,7 @@ const stripe = new Stripe("sk_test_51PJsNXSJLSHi65wnqzwM0fI9ppYAQZNrSqXlGBi0W30m
 
 //placing user order from frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://localhost:5173";
+  const frontend_url = "https://6652c212a8055af91717551f--silver-selkie-00eda9.netlify.app/";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
